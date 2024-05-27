@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/CommunicationMavlink">D:/Code/Gremsy/ComunicationMavlink/CommunicationMavlink/build/buildReleaseAndroid/CommunicationMavlink</file>
-
-  </qresource>
-</RCC>

@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/CommunicationMavlink">
-    <file alias="qmldir">D:/Code/Gremsy/ComunicationMavlink/CommunicationMavlink/build/buildReleaseDesktop/CommunicationMavlink/qmldir</file>
-  </qresource>
-</RCC>
-
