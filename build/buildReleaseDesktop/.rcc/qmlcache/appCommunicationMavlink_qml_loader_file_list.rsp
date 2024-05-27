@@ -1,0 +1,5 @@
+--resource
+D:/Code/Gremsy/ComunicationMavlink/CommunicationMavlink/build/buildReleaseDesktop/.qt/rcc/qmake_CommunicationMavlink.qrc
+--resource
+D:/Code/Gremsy/ComunicationMavlink/CommunicationMavlink/build/buildReleaseDesktop/.qt/rcc/appCommunicationMavlink_raw_qml_0.qrc
+/CommunicationMavlink/Main.qml

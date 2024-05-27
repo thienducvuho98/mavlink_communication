@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QObject>
-#include "communication.h" #Test 1 branch
+#include "communication.h"
 
 int main(int argc, char *argv[])
 {

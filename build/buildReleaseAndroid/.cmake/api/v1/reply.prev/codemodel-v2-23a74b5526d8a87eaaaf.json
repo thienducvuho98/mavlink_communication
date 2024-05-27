@@ -1,0 +1,232 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-4705b68ac297105a386b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CommunicationMavlink",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "_qt_internal_apk_dependencies::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_qt_internal_apk_dependencies-Debug-7d126f1303e02b12e581.json",
+					"name" : "_qt_internal_apk_dependencies",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aab-Debug-031beba8c7673cec42d1.json",
+					"name" : "aab",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-09c0032298cf1d892628.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-eb76706a9434afc0b865.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-7a51e6e3d93b06317856.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-8b1bbce9d40e55861c97.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apk-Debug-d9de9c43dceeb9851b7d.json",
+					"name" : "apk",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apk_all::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apk_all-Debug-5b6055d773b9e7195e29.json",
+					"name" : "apk_all",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink-Debug-d5e82e9543f02926a62c.json",
+					"name" : "appCommunicationMavlink",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_autogen-Debug-6e8f0c654b75d1bf0287.json",
+					"name" : "appCommunicationMavlink_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_autogen_timestamp_deps-Debug-c4965f07ff1c711a25d5.json",
+					"name" : "appCommunicationMavlink_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_make_aab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_make_aab-Debug-aeb04fa09060c4741c54.json",
+					"name" : "appCommunicationMavlink_make_aab",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_make_apk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_make_apk-Debug-ab594b68ab73f251e62e.json",
+					"name" : "appCommunicationMavlink_make_apk",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_prepare_apk_dir::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_prepare_apk_dir-Debug-df78c1c254475ac31fe7.json",
+					"name" : "appCommunicationMavlink_prepare_apk_dir",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_qmllint-Debug-407066de24e186159476.json",
+					"name" : "appCommunicationMavlink_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_qmllint_json-Debug-b0e8f60de2ebad57ee91.json",
+					"name" : "appCommunicationMavlink_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_qmllint_module-Debug-b72c312dcf5856fcc080.json",
+					"name" : "appCommunicationMavlink_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_qmltyperegistration-Debug-8cb23d5b45189592cccf.json",
+					"name" : "appCommunicationMavlink_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appCommunicationMavlink_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appCommunicationMavlink_tooling-Debug-608089788b4621032690.json",
+					"name" : "appCommunicationMavlink_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qt_internal_plugins::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qt_internal_plugins-Debug-5c6b7da07428d0bcac27.json",
+					"name" : "qt_internal_plugins",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Code/Gremsy/ComunicationMavlink/CommunicationMavlink/build/buildReleaseAndroid",
+		"source" : "D:/Code/Gremsy/ComunicationMavlink/CommunicationMavlink"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,1 @@
+set(__QT_DEPLOY_TARGET_appCommunicationMavlink_FILE D:/Code/Gremsy/ComunicationMavlink/CommunicationMavlink/build/buildReleaseAndroid/libappCommunicationMavlink_arm64-v8a.so)
