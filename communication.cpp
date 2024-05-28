@@ -1,21 +1,54 @@
 #include "communication.h"
 #include <QDebug>
+#include <QRegularExpression>
 
 Communication::Communication(QObject *parent) : QObject(parent)
 {
-    QObject::connect(&udpSocket, &QUdpSocket::readyRead, this, &Communication::slotReadyRead);
     QObject::connect(&timer, &QTimer::timeout, this, &Communication::sendData);
 }
 
-void Communication::startHeartbeat()
+void Communication::startHeartbeat(const QString &_ipAddress)
 {
-    qDebug()<<"Communication::startHeartbeat()";
-    timer.start(1000);
+    qDebug()<<"Communication::startHeartbeat() << IP: "<<_ipAddress;
+    this->ipAddress = _ipAddress;
+    if(this->ipAddress == "")
+    {
+        this->host.setAddress(QHostAddress::LocalHost);
+        QObject::connect(&udpSocket, &QUdpSocket::readyRead, this, &Communication::slotReadyRead);
+        timer.start(1000);
+    }
+    else
+    {
+        if(this->isValidIPv4(this->ipAddress) == true)
+        {
+            this->host.setAddress(this->ipAddress);
+            QObject::connect(&udpSocket, &QUdpSocket::readyRead, this, &Communication::slotReadyRead);
+            timer.start(1000);
+        }
+        else
+        {
+            qDebug()<<"Communication::startHeartbeat() << IP Address is invalid";
+            // emit colorChanged("red");
+            emit signalIP_AddressIsInvalid();
+        }
+    }
+}
+
+bool Communication::isValidIPv4(const QString &ip) {
+    // Biểu thức chính quy cho địa chỉ IPv4
+    QRegularExpression ipRegex("^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})\\."
+                               "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})\\."
+                               "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})\\."
+                               "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})$");
+
+    QRegularExpressionMatch match = ipRegex.match(ip);
+    return match.hasMatch();
 }
 
 void Communication::stopHeartbeat()
 {
     qDebug()<<"Communication::stopHeartbeat()";
+    QObject::disconnect(&udpSocket, &QUdpSocket::readyRead, this, &Communication::slotReadyRead);
     timer.stop();
 }
 

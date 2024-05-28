@@ -2,99 +2,106 @@ import QtQuick
 import QtQuick.Controls
 
 //ApplicationWindow
-Window  {
+ApplicationWindow  {
     visible: true
     width: 500
-    height: 200
+    height: 300
+    title: qsTr("Send/get Mavlink heartbeat message")
 
-    Rectangle {
-        width: parent.width
-        height: parent.height
-        border.color: "black"
-        border.width: 2
+    property color borderColor: "red"
+    property int borderwidth: 0
+
+    Column {
+        anchors.centerIn: parent
+        spacing: 10  // Khoảng cách giữa các thành phần trong cột
         Button {
             id: startStopButton
-            anchors {
-                left: parent.left;
-                right: parent.right;
-                top: parent.top;
-                leftMargin: 10;
-                rightMargin: 10;
-                topMargin: 12;
-            }
-
             text: qsTr("START")
             font.pixelSize: 32
+            width: 460
+            height: 80
 
             contentItem: Text {
                 text: startStopButton.text
                 font: startStopButton.font
                 opacity: enabled ? 1.0 : 0.3
-                color: startStopButton.down ? "#17a81a" : "#21be2b"
+                color: "#17a81a"
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 elide: Text.ElideRight
             }
 
-            background: Rectangle {
-                implicitWidth: 400
-                implicitHeight: 40
-                opacity: enabled ? 1 : 0.3
-                border.color: startStopButton.down ? "#17a81a" : "#21be2b"
-                border.width: 1
-                radius: 2
-            }
-
             onClicked: {
-                if (startStopButton.contentItem.text === "START") {
+                if (startStopButton.contentItem.text === "START")
+                {
                     startStopButton.contentItem.text = "STOP"
-                    communicationObj.startHeartbeat()
-                } else {
+                    borderwidth = 0;
+                    communicationObj.startHeartbeat(textBoxIP.text)
+                }
+                else
+                {
                     startStopButton.contentItem.text = "START"
-                    // textBox.text = "No data..."
                     communicationObj.stopHeartbeat()
                 }
             }
         }
 
+        Label {
+            text: "IP Address: (Default will be localhost if not entered)"
+            font.bold: true
+            horizontalAlignment: Text.AlignLeft
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
+        TextArea {
+            id: textBoxIP
+            verticalAlignment: Text.AlignVCenter
+            color: "black"
+            text: "Please enter IP Adress";
+            wrapMode: Text.Wrap
+            width: parent.width
+            height: 40
+
+            Rectangle {
+                id: border
+                anchors.fill: parent
+                color: "transparent"
+                border.color: borderColor
+                border.width: borderwidth
+            }
+        }
+
+        Label {
+            text: "Sequence of message heartbeat:"
+            font.bold: true
+            horizontalAlignment: Text.AlignLeft
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+
         TextArea {
             id: textBox
-            anchors.top: startStopButton.bottom
-            anchors.topMargin: 50
+            // anchors.top: textBoxIP.bottom
+            // anchors.topMargin: 50
             verticalAlignment: Text.AlignVCenter
             color: "black"
             text: "No data...";
-            opacity: (value == "" ? 1.0 : 0.0);
-            font {
-                italic: true
-                pointSize: fontSize;
-            }
-            anchors {
-                left: parent.left;
-                right: parent.right;
-                leftMargin: 10;
-                rightMargin: 10;
-                verticalCenter: parent.verticalCenter;
-            }
             width: parent.width
-            height: parent.height / 2
+            height: 40
         }
+    }
 
-        // Test other solution but failed
-        // function handleSignalSequenceReceivedFromHeartBeat(sequence) {
-        //     textBox.text = "Sequence is " + sequence
-        // }
-
-        // Connections {
-        //     target: communicationObj
-        //     onSignalSequenceReceivedFromHeartBeat: handleSignalSequenceReceivedFromHeartBeat
-        // }
-
-        Connections {
-            target: communicationObj
-            onSignalSequenceReceivedFromHeartBeat: { sequence
-                textBox.text = "Sequence is " + sequence
-            }
+    Connections {
+        target: communicationObj
+        onSignalSequenceReceivedFromHeartBeat:
+        { sequence
+            console.log("onSignalSequenceReceivedFromHeartBeat << sequence: ", sequence)
+            textBox.text = "Sequence is " + sequence
+        }
+        onSignalIP_AddressIsInvalid:
+        {
+            console.log("onSignalIP_AddressIsInvalid")
+            startStopButton.contentItem.text = "START"
+            borderwidth = 1;
         }
     }
 }

@@ -11,12 +11,15 @@ class Communication : public QObject
     Q_OBJECT
 public:
     explicit Communication(QObject *parent = nullptr);
-    Q_INVOKABLE void startHeartbeat();
+    Q_INVOKABLE void startHeartbeat(const QString &_ipAddress);
     Q_INVOKABLE void stopHeartbeat();
     char *showBufferInByte(void *unk_buf, unsigned long byte_cnt, QString mes);
+    bool isValidIPv4(const QString &ip);
 
 signals:
     void signalSequenceReceivedFromHeartBeat(int sequence);
+    void signalIP_AddressIsInvalid();
+    void colorChanged(QString color);
 
 private slots:
     void sendData();
@@ -24,6 +27,8 @@ private slots:
 
 private:
     QUdpSocket udpSocket;
+    QHostAddress host;
+    QString ipAddress;
     QTimer timer;
 };
 
