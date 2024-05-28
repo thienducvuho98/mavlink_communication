@@ -28,14 +28,12 @@ void Communication::startHeartbeat(const QString &_ipAddress)
         else
         {
             qDebug()<<"Communication::startHeartbeat() << IP Address is invalid";
-            // emit colorChanged("red");
             emit signalIP_AddressIsInvalid();
         }
     }
 }
 
 bool Communication::isValidIPv4(const QString &ip) {
-    // Biểu thức chính quy cho địa chỉ IPv4
     QRegularExpression ipRegex("^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})\\."
                                "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})\\."
                                "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})\\."

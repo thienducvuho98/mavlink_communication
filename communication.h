@@ -19,7 +19,6 @@ public:
 signals:
     void signalSequenceReceivedFromHeartBeat(int sequence);
     void signalIP_AddressIsInvalid();
-    void colorChanged(QString color);
 
 private slots:
     void sendData();
